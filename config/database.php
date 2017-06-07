@@ -69,6 +69,15 @@ return [
             'sslmode' => 'prefer',
         ],
 
+        'sqlsrv' => [
+            'driver' => 'sqlsrv',
+            'host' => env('DB_HOST', '192.168.56.101'),
+            'database' => env('DB_DATABASE', 'sri_input'),
+            'username' => env('DB_USERNAME', 'sri'),
+            'password' => env('DB_PASSWORD', 'sri'),
+            'charset' => 'utf8',
+            'prefix' => '',
+        ],
     ],
 
     /*

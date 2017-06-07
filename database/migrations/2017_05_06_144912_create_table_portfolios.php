@@ -20,6 +20,9 @@ class CreateTablePortfolios extends Migration
             $table->string('filter', 100);
             $table->timestamps();
         });
+
+        DB::unprepared('alter table portfolios MODIFY column updated_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP');
+        DB::unprepared('alter table portfolios MODIFY column created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP');
     }
 
     /**

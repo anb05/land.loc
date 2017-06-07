@@ -21,6 +21,9 @@ class CreateTablePages extends Migration
             $table->string('images', 100);
             $table->timestamps();
         });
+
+        DB::unprepared('alter table pages MODIFY column updated_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP');
+        DB::unprepared('alter table pages MODIFY column created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP');
     }
 
     /**

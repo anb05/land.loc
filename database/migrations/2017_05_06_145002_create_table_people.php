@@ -21,6 +21,9 @@ class CreateTablePeople extends Migration
             $table->text('text');
             $table->timestamps();
         });
+
+        DB::unprepared('alter table people MODIFY column updated_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP');
+        DB::unprepared('alter table people MODIFY column created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP');
     }
 
     /**

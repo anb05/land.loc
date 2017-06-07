@@ -20,6 +20,9 @@ class CreateTableServices extends Migration
             $table->string('icon', 100);
             $table->timestamps();
         });
+
+        DB::unprepared('alter table services MODIFY column updated_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP');
+        DB::unprepared('alter table services MODIFY column created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP');
     }
 
     /**
