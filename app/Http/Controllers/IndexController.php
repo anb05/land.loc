@@ -8,6 +8,7 @@ use App\Page;
 use App\Service;
 use App\Portfolio;
 use App\People;
+use App\Mail\MailFromUser;
 
 use DB;
 use Illuminate\Support\Facades\Mail;
@@ -31,17 +32,14 @@ class IndexController extends Controller
 
             $data = $request->all();
 
-            $result = Mail::send('site.email', ['data' => $data], function($message) use ($data)
-            {
-                $mail_admin = env('MAIL_ADMIN');
+            $mail = new MailFromUser($data);
+            $mail_admin = env('MAIL_ADMIN');
+            $mail->subject('Question');
+            $mail->to($mail_admin);
+//            Mail::to($mail_admin)->send($mail);
+            Mail::send($mail);
 
-                $message->from($data['email'], $data['name']);
-                $message->to($mail_admin)->subject('Question');
-            });
-
-            if ($result) {
-                return redirect()->route('home')->with('status', 'Email is send');
-            }
+            return redirect()->route('home')->with('status', 'Email is send');
         }
 
 

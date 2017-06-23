@@ -29,6 +29,10 @@ Route::group(['middleware'=>'web'], function ()
         ['uses' => 'PageController@execute', 'as' => 'page']
     );
 
+    /**
+     * Формирование группы маршрутов для работы системы
+     * аутентификации и авторизации фреймворка
+     */
     Route::auth();
 });
 
@@ -45,10 +49,24 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function ()
     /**
      * Отображение главной странички админки по адресу
      * /admin
+     *
+     * Отображаем ровно три ссылки.
+     * Эти ссылки ведут на конкретный раздел панли администратора т.е.
+     *    - раздел редактирования страниц;
+     *    - раздел редактирования сервисов;
+     *    - раздел редактирования портфорлио.
      */
     Route::get('/', function ()
     {
+        if (view()->exists('admin.index')) {
+            $data = [
+                'title' => 'Панель администратора',
+            ];
 
+            return view('admin.index', $data);
+        } else {
+            abort(404);
+        }
     });
 
     /**
@@ -127,3 +145,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function ()
     });
 });
 
+
+//Auth::routes();
+
+//Route::get('/home', 'HomeController@index');
