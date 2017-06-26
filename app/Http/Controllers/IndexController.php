@@ -37,9 +37,14 @@ class IndexController extends Controller
             $mail->subject('Question');
             $mail->to($mail_admin);
 //            Mail::to($mail_admin)->send($mail);
-            Mail::send($mail);
+            try {
+                Mail::send($mail);
+                return redirect()->route('home')->with('status', 'Email is send');
+            } catch (\Swift_SwiftException $exception) {
+//                dd($exception);
+                return redirect()->route('home')->with('status', $exception->getMessage());
+            }
 
-            return redirect()->route('home')->with('status', 'Email is send');
         }
 
 
