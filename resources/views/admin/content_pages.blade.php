@@ -27,13 +27,15 @@
 
                     <td>
                         <form action="{{ route('pagesEdit', ['page' => $page->id]) }}" class="form-horizontal" method="post">
-                            <input type="hidden" name="action" value="delete">
+                            <input type="hidden" name="_method" value="delete">
                             {{ csrf_field() }}
                             <button class="btn btn-danger" type="submit">Удалить</button>
                         </form>
                         {{--{!! Form::open(['url'=>route('pagesEdit',['page'=>$page->id]), 'class'=>'form-horizontal','method' => 'POST']) !!}--}}
 {{----}}
-                        {{--{!! Form::hidden('action','delete') !!}--}}
+                        {{--{!! Form::hidden('_method','delete') !!}--}}
+{{----}}
+                        {{--{{ method_field('DELETE') }}--}}
                         {{--{!! Form::button('Удалить',['class'=>'btn btn-danger','type'=>'submit']) !!}--}}
 {{----}}
                         {{--{!! Form::close() !!}--}}
