@@ -25,7 +25,10 @@ class PagesAddController extends Controller
             ], $massages);
 
             if ($validator->fails()) {
-                return redirect()->route('pagesAdd')->withErrors($validator)->withInput();
+                return redirect()
+                    ->route('pagesAdd')
+                    ->withErrors($validator)
+                    ->withInput();
             }
 
             if ($request->hasFile('images')) {
