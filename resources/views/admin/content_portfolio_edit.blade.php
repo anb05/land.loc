@@ -4,11 +4,12 @@
         {{ csrf_field() }}
 
         <div class="form-group">
-            <input type="hidden" value="{{ $data['id'] }}">
+            <input type="hidden" name="id" value="{{ $data['id'] }}">
             <label for="name" class="col-xs-2 control-label">Название:</label>
             <div class="col-xs-8">
                 <input type="text" value="{{ $data['name'] }}"
                        class="form-control"
+                       name="name"
                        id="name"
                        placeholder="Введите название портфолио">
             </div>
@@ -19,6 +20,7 @@
             <div class="col-xs-8">
                 <input type="text" value="{{ $data['filter'] }}"
                        class="form-control"
+                       name="filter"
                        id="filter"
                        placeholder="Введите название фильтра">
             </div>
@@ -41,6 +43,7 @@
             <div class="col-xs-8">
                 <input type="file"
                        class="filestyle btn-primary"
+                       name="images"
                        id="images"
                        value="Выбирите изображение"
                        placeholder="Файла нет">

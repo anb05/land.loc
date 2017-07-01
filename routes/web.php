@@ -129,19 +129,22 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function ()
          * Роутер для маршрута
          * /admin/services
          */
-        Route::get('/', ['uses' => 'ServicesController@execute', 'as' => 'services']);
+        Route::get('/',
+            ['uses' => 'ServicesController@execute', 'as' => 'services']);
 
         /**
          * Маршрут для добавления новых элементов на страницу (в Базу Данных)
          * /admin/services/add
          */
-        Route::match(['get', 'post'],'/add', ['uses' => 'ServicesAddController@execute', 'as' => 'servicesAdd']);
+        Route::match(['get', 'post'],'/add',
+            ['uses' => 'ServicesAddController@execute', 'as' => 'servicesAdd']);
 
         /**
          * Маршрут для редактирования страниц, т.е. изменения контента или удаления страничек
          * /admin/edit/2 (вместо 2 может стоять любая цифра или слово однозначно идентифицирующее страницу)
          */
-        Route::match(['get', 'post', 'delete'], '/edit/{services}', ['uses' => 'ServicesEditController@execute', 'as' => 'servicesEdit']);
+        Route::match(['get', 'post', 'delete'], '/edit/{services}',
+            ['uses' => 'ServicesEditController@execute', 'as' => 'servicesEdit']);
     });
 });
 
