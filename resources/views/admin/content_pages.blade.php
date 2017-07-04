@@ -20,7 +20,7 @@
 
                 <tr>
                     <td>{{ $page->id }}</td>
-                    <td><a href="{{ route('pagesEdit', ['page' => $page->id]) }}" alt="{{ $page->name }}">{{ $page->name }}</a></td>
+                    <td><a href="{{ route('pagesEdit', ['page' => $page->id]) }}" title="{{ $page->name }}">{{ $page->name }}</a></td>
                     <td>{{ $page->alias }}</td>
                     <td>{{ $page->text }}</td>
                     <td>{{ $page->created_at }}</td>

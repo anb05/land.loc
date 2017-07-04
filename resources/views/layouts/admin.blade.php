@@ -7,7 +7,7 @@
     <link rel="icon" href="favicon.png" type="image/png">
     <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" type="text/css">
-
+    <link href="{{ asset('assets/css/font-awesome.css') }}" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="{{asset('assets/js/jquery-1.11.0.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/ckeditor/ckeditor.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/bootstrap.min.js')}}"></script>
