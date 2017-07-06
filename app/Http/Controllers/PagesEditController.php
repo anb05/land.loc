@@ -75,6 +75,7 @@ class PagesEditController extends Controller
          * Для формирования массива ТОЛЬКО данных из БД используем метод toArray()
          */
         $old = $page->toArray();
+//        dd($old);
 
         if (view()->exists('admin.pages_edit')) {
             $data = [
@@ -83,6 +84,5 @@ class PagesEditController extends Controller
             ];
             return view('admin.pages_edit', $data);
         }
-//        dd($old);
     }
 }

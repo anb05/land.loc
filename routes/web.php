@@ -91,7 +91,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function ()
          * Маршрут для редактирования страниц, т.е. изменения контента или удаления страничек
          * /admin/edit/2 (вместо 2 может стоять любая цифра или слово однозначно идентифицирующее страницу)
          */
-        Route::match(['get', 'post', 'delete'], '/edit/{page}', ['uses' => 'PagesEditController@execute', 'as' => 'pagesEdit']);
+        Route::match(['get', 'post', 'delete'], '/edit/{page}',
+            ['uses' => 'PagesEditController@execute', 'as' => 'pagesEdit']);
     });
 
     /**
@@ -116,7 +117,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function ()
          * Маршрут для редактирования страниц, т.е. изменения контента или удаления страничек
          * /admin/edit/2 (вместо 2 может стоять любая цифра или слово однозначно идентифицирующее страницу)
          */
-        Route::match(['get', 'post', 'delete'], '/edit/{portfolio}', ['uses' => 'PortfolioEditController@execute', 'as' => 'portfolioEdit']);
+        Route::match(['get', 'post', 'delete'], '/edit/{portfolio}',
+            ['uses' => 'PortfolioEditController@execute', 'as' => 'portfolioEdit']);
     });
 
     /**
@@ -143,7 +145,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function ()
          * Маршрут для редактирования страниц, т.е. изменения контента или удаления страничек
          * /admin/edit/2 (вместо 2 может стоять любая цифра или слово однозначно идентифицирующее страницу)
          */
-        Route::match(['get', 'post', 'delete'], '/edit/{services}',
+        Route::match(['get', 'post', 'delete'], '/edit/{service}',
             ['uses' => 'ServicesEditController@execute', 'as' => 'servicesEdit']);
     });
 });

@@ -15,7 +15,7 @@
             @foreach($services as $k => $service)
                 <tr>
                     <td>{{ $service->id }}</td>
-                    <td><a href="{{ route('servicesEdit', ['services' => $service->id]) }}">{{ $service->name }}</a></td>
+                    <td><a href="{{ route('servicesEdit', ['service' => $service->id]) }}">{{ $service->name }}</a></td>
                     <td>{{ $service->text }}</td>
                     <td>
                         <div class="service_icon" style="text-align: center; margin-bottom: 0"> <span><i class="fa {{ $service->icon }}"></i></span> </div>

@@ -20,7 +20,7 @@
         <div class="form-group">
             <label for="editor" class="col-xs-2 control-label">Текст</label>
             <div class="col-xs-8">
-                <textarea name="text" type="text" id="editor"
+                <textarea name="text" id="editor"
                           class="form-control" placeholder="Введите текст страницы">{{ old('alias') }}</textarea>
             </div>
         </div>
