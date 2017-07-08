@@ -47,6 +47,6 @@ class ServicesEditController extends Controller
             return view('admin.service_edit')
                 ->with($data);
         }
-        abort(404);
+        abort(404, 'Error 404');
     }
 }
